@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require( 'fs' );
-const sys = require( 'util' );
 const exec = require( 'child_process' ).exec;
 const argv = require( 'yargs' )
   .usage( 'Usage: $0 <command> [options]' )
@@ -60,8 +59,8 @@ if ( argv.f & argv.i ) {
 
     extensions.forEach( ( val, i ) => {
       const command = `${vsCodeExecute} ${val}`;
-      console.log( `Installing extension:${val}` );
-      //exec( command, execResult );
+      console.log( `Installing extension: ${val}` );
+      // exec( command, execResult );
     } );
   } );
 
