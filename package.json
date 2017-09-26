@@ -1,5 +1,26 @@
 {
+  "name": "vscode_tools",
+  "version": "1.0.0",
+  "description": "Utility to export and install vscode extensions via text file",
+  "main": "vscode_extensions.js",
   "dependencies": {
     "yargs": "^9.0.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "help": "node vscode_extensions.js -h"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmnegatives/vscode_tools.git"
+  },
+  "keywords": [
+    "vscode"
+  ],
+  "author": "Imran Brown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmnegatives/vscode_tools/issues"
+  },
+  "homepage": "https://github.com/rmnegatives/vscode_tools#readme"
 }
