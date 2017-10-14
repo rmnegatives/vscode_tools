@@ -45,8 +45,7 @@ if ( argv.e ) {
   return;
 }
 
-
-if ( argv.f & argv.i ) {
+if ( argv.f && argv.i) {
   let extensions = [];
   const vsCodeExecute = `${vscodeVersion} ${vsCodeCommandLine.install}`;
   const fileStream = fs.createReadStream( argv.file );
@@ -60,7 +59,7 @@ if ( argv.f & argv.i ) {
     extensions.forEach( ( val, i ) => {
       const command = `${vsCodeExecute} ${val}`;
       console.log( `Installing extension: ${val}` );
-      // exec( command, execResult );
+      exec( command, execResult );
     } );
   } );
 

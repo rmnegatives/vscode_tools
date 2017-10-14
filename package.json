@@ -2,7 +2,7 @@
   "name": "vscode-extensions-tools",
   "version": "1.0.0",
   "description": "Utility to export and install vscode extensions via text file",
-  "main": "vscode_extensions.js",
+  "main": "index.js",
   "dependencies": {
     "yargs": "^9.0.1"
   },
