@@ -19,7 +19,4 @@ Examples:
   vscode_extensions.txt                     insiders
   vscode_extensions.js -e                   Export all vscode extensions
   vscode_extensions.js -d                   Disable all vscode extensions
-
-copyright 2017
-
 ```
