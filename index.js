@@ -59,7 +59,7 @@ if ( argv.f && argv.i) {
 
     extensions.forEach( ( val, i ) => {
       const command = `${vsCodeExecute} ${val}`;
-      console.log(chalk.green(`Installing extension: ${val}`));
+      console.log(chalk.blue(`Installing extension: ${val}`));
       exec( command, execResult );
     } );
   } );
