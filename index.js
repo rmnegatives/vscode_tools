@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
-const fs = require( 'fs' );
 const chalk = require('chalk');
+
+const info = chalk.blue;
+const error = chalk.bold.red;
+const success = chalk.green;
+
+const fs = require( 'fs' );
+
 const exec = require( 'child_process' ).exec;
 const argv = require( 'yargs' )
   .usage( 'Usage: $0 <command> [options]' )
@@ -59,17 +65,17 @@ if ( argv.f && argv.i) {
 
     extensions.forEach( ( val, i ) => {
       const command = `${vsCodeExecute} ${val}`;
-      console.log(chalk.blue(`Installing extension: ${val}`));
+      console.log(info(`Installing extension: ${val}`));
       exec( command, execResult );
     } );
   } );
 
   function execResult( error, stdout, stderr ) {
     if ( error ) {
-      console.error( `exec error: ${error}` );
+      console.error(error(`exec error: ${error}`));
       return;
     }
   }
 
-  console.log(chalk.green( 'All Extensions Installed'));
+  console.log(success( 'All Extensions Installed'));
 }
