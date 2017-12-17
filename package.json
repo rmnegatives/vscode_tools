@@ -7,9 +7,21 @@
     "chalk": "^2.1.0",
     "yargs": "^9.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2"
+  },
   "scripts": {
+    "pretty": "prettier --write --print-width 110 --single-quote --trailing-comma --tab-width 4 \"src/**/*.js\"",
+    "precommit": "lint-staged",
     "help": "node vscode_extensions.js -h"
+  },
+  "lint-staged": {
+    "*.js": [
+        "npm run pretty",
+        "git add"
+    ]
   },
   "repository": {
     "type": "git",
