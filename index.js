@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const chalk = require('chalk');
+const chalk = require( 'chalk' );
 
 const info = chalk.blue;
-const error = chalk.bold.red;
-const success = chalk.green;
+const printError = chalk.bold.red;
+const printSuccess = chalk.green;
 
 const fs = require( 'fs' );
 
@@ -52,7 +52,7 @@ if ( argv.e ) {
   return;
 }
 
-if ( argv.f && argv.i) {
+if ( argv.f && argv.i ) {
   let extensions = [];
   const vsCodeExecute = `${vscodeVersion} ${vsCodeCommandLine.install}`;
   const fileStream = fs.createReadStream( argv.file );
@@ -62,20 +62,20 @@ if ( argv.f && argv.i) {
   } );
 
   fileStream.on( 'end', () => {
-
     extensions.forEach( ( val, i ) => {
       const command = `${vsCodeExecute} ${val}`;
-      console.log(info(`Installing extension: ${val}`));
+      console.log( info( `Installing extension: ${val}` ) );
+
       exec( command, execResult );
     } );
+    console.log( printSuccess( 'All Extensions Installed' ) );
   } );
 
   function execResult( error, stdout, stderr ) {
     if ( error ) {
-      console.error(error(`exec error: ${error}`));
-      return;
+      console.log( printError( `exec error: ${error}` ) );
     }
   }
 
-  console.log(success( 'All Extensions Installed'));
+
 }
